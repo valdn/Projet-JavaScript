@@ -1,18 +1,12 @@
 import _ from 'lodash';
 
-  function component() {
-    const element = document.createElement('div');
-   const btn = document.createElement('button');
-
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-     btn.innerHTML = 'and check the console!';
-     btn.onclick = printMe;
-
-     element.appendChild(btn);
-
-    return element;
-  }
-
-  let element = component(); // Store the element to re-render on print.js changes
-  document.body.appendChild(element);
+    function component() {
+      const element = document.createElement('div');
+    
+      // Lodash, currently included via a script, is required for this line to work
+      element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    
+      return element;
+    }
+    
+    document.body.appendChild(component());
