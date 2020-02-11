@@ -14,18 +14,26 @@ import _ from 'lodash';
     
 
     function loadData(){
-      const url = 'https://hubeau.eaufrance.fr/api/v0/etat_piscicole/poissons?nom_cours_eau=null&size=20'
+      const url = 'https://hubeau.eaufrance.fr/api/v0/etat_piscicole/poissons?size=20'
       let oReq = new window.XMLHttpRequest()
 
-      oReq.onload = function(event){
+      oReq.onload = function(event) {
         var poissons = []
         let data = JSON.parse(this.responseText)
         data.data.forEach(element => {
             poissons.push(element.nom_poisson)
-
         });
 
+        var ce = []
+        data = JSON.parse(this.responseText)
+        data.data.forEach(element => {
+            if (element.nom_cours_eau!=null)
+              ce.push(element.nom_cours_eau)
+        });
+
+
         writedata(poissons)
+        writedata(ce)
       }
 
       oReq.onerror = function(event){
