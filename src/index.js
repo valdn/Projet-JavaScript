@@ -1,8 +1,14 @@
 import _ from 'lodash';
+import "regenerator-runtime/runtime"
+import "core-js/stable"
 
     var request = new XMLHttpRequest()
     var request2 = new XMLHttpRequest()
-    var x; 
+    var request4 = new XMLHttpRequest()
+    var tab_filmid = []
+    getFilms(mycallback)
+    var x;
+    var urlo;
 
     request.open('GET', 'https://ghibliapi.herokuapp.com/species', true)
     request.onload = function() {
@@ -20,6 +26,9 @@ import _ from 'lodash';
     }
     request.send()
 
+    function mycallback(data){
+      tab_filmid=data
+    }
 
     function writespecies(liste) {
       let contenu = document.createElement('div')
@@ -57,7 +66,7 @@ import _ from 'lodash';
       request2.onload = function() {
         // Begin accessing JSON data here
         let data = JSON.parse(this.response)
-        if (request.status >= 200 && request.status < 400) {
+        if (request2.status >= 200 && request2.status < 400) {
           var tab_link = []
           data.forEach(people => {
             people.people.forEach(link =>{
@@ -80,7 +89,7 @@ import _ from 'lodash';
         request3.onload = function() {
         // Begin accessing JSON data here
         let data = JSON.parse(this.response)
-        if (request.status >= 200 && request.status < 400) {
+        if (request3.status >= 200 && request3.status < 400) {
           tab_name.push(data.name)
         } else {
           console.log('error')
@@ -93,7 +102,7 @@ import _ from 'lodash';
       });
     }
 
-    function writenames(liste) {
+    async function writenames(liste) {
       let c = 0;
       document.getElementById('div_names').hidden=false;
       let contenu = document.getElementById('tabn')
@@ -104,7 +113,65 @@ import _ from 'lodash';
           c++
         }
         var cell = row.insertCell(i%3)
-        cell.innerHTML = '<p>' + liste[i] + '</p>'
+        try{
+        await getImg(liste[i], cell)
+        } catch(error) {
+          console.log("Error" , error)
+        }
       }
+    }
+
+    function sleep(ms){
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
+
+    function getImg(name, cell){
+        return new Promise(function (resolve, reject) {
+        request4.open('GET', "https://api.jikan.moe/v3/search/character?q=" + name, true)
+        request4.onload = function() {
+        let img
+        let lock = false
+        let data = JSON.parse(this.response)
+        if (request4.status >= 200 && request4.status < 400) {
+          data.results.forEach(char =>{
+            if (typeof char.anime[0] !== 'undefined')
+              if (tab_filmid.indexOf(char.anime[0].mal_id)!= -1){
+                if (!lock){
+                  img = char.image_url
+                  lock=true
+                }
+              }
+          })
+          cell.innerHTML = '<img src=' + img + '>'
+          resolve(request4.response)
+        } else {
+          console.log('error')
+          reject(request4.status)
+        }
+        cell.innerHTML += '<p>' + name + '</p>'
+      }
+      request4.send()
+      });
+    }
+
+    function getFilms(callback){
       
+      var request5 = new XMLHttpRequest()
+        request5.open('GET', "https://api.jikan.moe/v3/search/anime?producer=21", true)
+        request5.onload = function() {
+        // Begin accessing JSON data here
+        let data = JSON.parse(this.response)
+        var tab_id = new Array(data.results.length)
+        if (request5.status >= 200 && request5.status < 400) {
+          let i = 0;
+          data.results.forEach(id => {
+            tab_id[i]=id.mal_id
+            i++
+          })
+        } else {
+          console.log('error')
+        }
+        callback(tab_id)
+      }
+      request5.send()
     }

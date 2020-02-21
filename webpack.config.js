@@ -63,7 +63,7 @@ var config = {
       filename: 'assets/stylesheets/[name].css', chunkFilename: '[id].css'
     }),
     new HtmlWebpackPlugin({
-      title: 'There is a fish'
+      title: 'Ghibli API Projet'
     })
   ]
 }
