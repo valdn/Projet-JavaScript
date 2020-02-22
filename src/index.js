@@ -3,23 +3,19 @@ import "regenerator-runtime/runtime"
 import "core-js/stable"
 
     var request = new XMLHttpRequest()
-    var request2 = new XMLHttpRequest()
-    var request4 = new XMLHttpRequest()
     var tab_filmid = []
     getFilms(mycallback)
-    var x;
-    var urlo;
 
     request.open('GET', 'https://ghibliapi.herokuapp.com/species', true)
     request.onload = function() {
       // Begin accessing JSON data here
       let data = JSON.parse(this.response)
-      var tableau_espece = []
+      var tab_espece = []
       if (request.status >= 200 && request.status < 400) {
         data.forEach(espece => {
-          tableau_espece.push(espece.name)
+          tab_espece.push(espece.name)
         })
-        writespecies(tableau_espece)
+        writespecies(tab_espece)
       } else {
         console.log('error')
       }
@@ -61,7 +57,8 @@ import "core-js/stable"
     }
 
     function updated(){
-      x = document.getElementById('select_espece').value
+      let request2 = new XMLHttpRequest()
+      let x = document.getElementById('select_espece').value
       request2.open('GET', 'https://ghibliapi.herokuapp.com/species?name=' + x, true)
       request2.onload = function() {
         // Begin accessing JSON data here
@@ -160,6 +157,7 @@ import "core-js/stable"
           name = 'Prince Lune'
         }
         return new Promise(function (resolve, reject) {
+          var request4 = new XMLHttpRequest()
           request4.open('GET', "https://api.jikan.moe/v3/search/character?q=" + name, true)
           request4.onload = function() {
           let img
