@@ -3,7 +3,7 @@ import { updated } from "./updated.js"
     export function writespecies(liste) {
       let contenu = document.createElement('div')
       contenu.id="data"
-      contenu.innerHTML += "<h3> Liste especes </h3>"
+      contenu.innerHTML += "<h3> Liste espèces </h3>"
       let selector = document.createElement('select')
       selector.name="espece"
       selector.id="select_espece"
