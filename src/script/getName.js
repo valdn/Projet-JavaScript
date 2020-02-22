@@ -1,10 +1,9 @@
-import _ from 'lodash';
 import { writenames } from "./writenames.js"
 
     export function getName(links){
-      var tab_name = []
+      let tab_name = []
       links.forEach(link => {
-        var request3 = new XMLHttpRequest()
+        let request3 = new XMLHttpRequest()
         request3.open('GET', link, true)
         request3.onload = function() {
         // Begin accessing JSON data here

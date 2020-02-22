@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { getSpecies } from "./getSpecies.js"
 import { getFilms } from "./getFilms.js"
 

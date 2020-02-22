@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { getName } from "./getName.js"
 
     export function updated(){
@@ -9,7 +8,7 @@ import { getName } from "./getName.js"
         // Begin accessing JSON data here
         let data = JSON.parse(this.response)
         if (request2.status >= 200 && request2.status < 400) {
-          var tab_link = []
+          let tab_link = []
           data.forEach(people => {
             people.people.forEach(link =>{
               tab_link.push(link)

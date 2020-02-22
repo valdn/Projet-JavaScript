@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { updated } from "./updated.js"
 
     export function writespecies(liste) {
@@ -15,7 +14,7 @@ import { updated } from "./updated.js"
       opt.text = "Choose ..."
       opt.value = "fefe"
       document.getElementById('select_espece').options.add(opt)
-      for(var i=0; i < liste.length; i = i+1) {
+      for(let i=0; i < liste.length; i = i+1) {
         let opt = document.createElement('option')
         opt.text = liste[i]
         opt.value = liste[i]
@@ -23,7 +22,7 @@ import { updated } from "./updated.js"
       }
       let names = document.createElement('div')
       names.id='div_names'
-      names.innerHTML += "<h3> Liste noms </h3>"
+      names.innerHTML += '<h3 id="lpers"> Liste personnages </h3>'
       let tabn = document.createElement('table')
       tabn.id = 'tabn'
       names.appendChild(tabn)

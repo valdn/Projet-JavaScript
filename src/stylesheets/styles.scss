@@ -1,0 +1,66 @@
+table {
+    position: absolute;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-spacing: 75px;
+}
+
+td{
+    border: 15px solid black;
+    background-color: rgba($color: #b3d9ff, $alpha: 0.7);
+    vertical-align: text-bottom;
+}
+
+table,td{
+    border-radius: 8px;
+}
+
+p{
+    text-align: center;
+    border-top: 15px solid black;
+    padding-top: 15px;
+    min-width: 110%;
+    margin-left: -5%;
+}
+
+img{
+    border-radius: 8px;
+}
+
+body {
+    background-color: #4da6ff;
+    padding-right: 4.7%;
+}
+
+#data{
+    margin-bottom: 50px;
+    width: 100%;    
+    background-image: url("https://s1.qwant.com/thumbr/700x0/1/1/b3590db255520f5f240ed41b2f8b3cf4871e79b818e9cdd7f412ad30d7bc32/1920px-Studio_Ghibli_logo.svg.png?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fc%2Fca%2FStudio_Ghibli_logo.svg%2F1920px-Studio_Ghibli_logo.svg.png&q=0&b=1&p=0&a=1");
+    background-color: #cccccc;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: 1450px;
+    padding: 40px;
+    padding-top: 10px;
+    border: 10px solid black;
+}
+
+h3{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+h3, p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+#lpers{
+    padding-left: 40px;
+}
+
+select{
+    font-size: 15px;
+}
+
