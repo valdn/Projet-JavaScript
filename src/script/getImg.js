@@ -56,6 +56,7 @@ import chutotoro from '../images/chutotoro.png'
                     if (!lock){
                       img = char.image_url
                       lock=true
+                      return
                     }
                   }
               })

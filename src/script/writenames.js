@@ -15,7 +15,7 @@ import { getImg } from "./getImg.js"
         }
         let cell = row.insertCell(i%3)
         try{
-        await getImg(liste[i], cell)
+          await getImg(liste[i], cell)
         } catch(error) {
           console.log("Error" , error)
         }
