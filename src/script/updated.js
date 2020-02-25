@@ -1,5 +1,7 @@
 import { getName } from "./getName.js"
 
+/*En focntion du l'option du selecteur choisi on récupère tous les liens des personnages de l'espèce choisie*/
+
     export function updated(){
       let request2 = new XMLHttpRequest()
       let x = document.getElementById('select_espece').value
@@ -14,7 +16,7 @@ import { getName } from "./getName.js"
               tab_link.push(link)
             })
           })
-          getName(tab_link)
+          getName(tab_link) //On envoie le tableau de lien pour récupérer les noms des personnages
         } else {
           console.log('error')
         }

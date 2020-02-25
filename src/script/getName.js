@@ -1,5 +1,7 @@
 import { writenames } from "./writenames.js"
 
+/* On fait une requête pour chaque lien pour récupérer le nom du personnage*/
+
     export function getName(links){
       let tab_name = []
       links.forEach(link => {
