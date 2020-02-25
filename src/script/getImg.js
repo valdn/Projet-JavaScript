@@ -5,6 +5,7 @@ import chibitotoro from '../images/chibitotoro.png'
 import chutotoro from '../images/chutotoro.png'
 
     export function getImg(name, cell){
+      /* Pour les personnages qui n'ont pas d'images ont leur ajoutes une image en dépendance*/
       if (name == 'Yuki' || name == 'Hii-sama' || name == 'Chu Totoro' || name =='Chibi Totoro'){
         let img
         switch(name){
@@ -27,6 +28,7 @@ import chutotoro from '../images/chutotoro.png'
         cell.innerHTML += '<p>' + name + '</p>'
       }
       else{
+        /* Pour les personnages qui n'ont pas le bon nom dans l'API Jikan*/
         if (name == 'Catbus'){
           name = 'Nekobasu'
         }
@@ -42,7 +44,11 @@ import chutotoro from '../images/chutotoro.png'
         if (name == 'Niya'){
           name = 'Prince Lune'
         }
-        return new Promise(function (resolve, reject) {
+
+        /* Requete pour rechercher les images de chaque personnages,
+        ont compare chaque personnage avec le tableau de film pour 
+        être sur qu'il est issu du Studio Ghibli*/
+        return new Promise(function (resolve, reject) { //Promise pour attendre chaque requête et eviter les erreurs CORS
           let request4 = new XMLHttpRequest()
           request4.open('GET', "https://api.jikan.moe/v3/search/character?q=" + name, true)
           request4.onload = function() {
@@ -65,8 +71,8 @@ import chutotoro from '../images/chutotoro.png'
               console.log('error')
               reject(request4.status)
             }
-          cell.innerHTML = '<img src=' + img + '>'
-          cell.innerHTML += '<p>' + name + '</p>'
+          cell.innerHTML = '<img src=' + img + '>' //affichage de l'image
+          cell.innerHTML += '<p>' + name + '</p>' //affichage du nom
         }
         request4.send()
       });
