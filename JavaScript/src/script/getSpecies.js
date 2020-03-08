@@ -1,6 +1,6 @@
 import { writespecies } from "./writespecies.js"
 
-/*Focntion pour récupérer les espèces de l'API Studio Ghibli*/
+/*Fonction pour récupérer les espèces de l'API Studio Ghibli*/
 
 export function getSpecies(){
   let request = new XMLHttpRequest()
