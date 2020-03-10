@@ -8,7 +8,7 @@ class Species extends React.Component {
     super(props)
     this.state = {
       species: [],
-      specie: "",
+      specie: [],
       options: [],
       films: [],
     };
@@ -26,7 +26,9 @@ class Species extends React.Component {
   }
 
   handleOnChange(specie){
-    this.setState({specie: specie.value})
+    console.log(specie)
+    this.setState({specie: specie})
+    
   }
 
   render() {
@@ -35,7 +37,7 @@ class Species extends React.Component {
         <div>
           <div id="data">
             <h3>Species List</h3>
-            <Select options={this.state.options} onChange={this.handleOnChange.bind(this)}/>
+            <Select defaultValue={[]} isMulti options={this.state.options} onChange={this.handleOnChange.bind(this)}/>
           </div>
           <ListLink specie={this.state.specie} films={this.state.films}/>
         </div>

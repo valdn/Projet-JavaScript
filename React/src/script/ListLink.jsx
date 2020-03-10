@@ -11,18 +11,25 @@ class ListLink extends React.Component {
   }
 
   async componentDidUpdate(prevprops){
-      if (prevprops.specie!==this.props.specie){
-        let links = await Fetch.getLinks(this.props.specie)
-        let names = []
-        this.setState({names: []})
-        let compt = 0
-        for (let element of links){
-          await sleep(50)
-          names.push(<People key={compt} link={element} films={this.props.films}/>)
-          compt++
+      if (this.props.specie) {
+        if (prevprops.specie!==this.props.specie){
+          let links = await Fetch.getLinks(this.props.specie)
+          let names = []
+          this.setState({names: []})
+          let compt = 0
+          for (let element of links){
+            await sleep(100)
+            names.push(<People key={compt} link={element} films={this.props.films}/>)
+            compt++
+          }
+          this.setState({names: names})
         }
-        this.setState({names: names})
+    } else {
+      if (this.state.names.length != 0) {
+        this.setState({names: []})
       }
+     
+    }
   }
 
   render() {
