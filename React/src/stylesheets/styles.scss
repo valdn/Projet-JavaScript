@@ -4,11 +4,11 @@ img{
 
 body {
     background-color: #4da6ff;
-    background-image: url("https://i.pinimg.com/originals/12/b5/b7/12b5b7725fc5b3b092a3a7d4e5768205.jpg");
+    background-image: url("../images/img-back.jpg");
 }
 
 #data{   
-    background-image: url("https://s1.qwant.com/thumbr/700x0/1/1/b3590db255520f5f240ed41b2f8b3cf4871e79b818e9cdd7f412ad30d7bc32/1920px-Studio_Ghibli_logo.svg.png?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fc%2Fca%2FStudio_Ghibli_logo.svg%2F1920px-Studio_Ghibli_logo.svg.png&q=0&b=1&p=0&a=1");
+    background-image: url("../images/logo.png");
     background-color: #cccccc;
     background-size: 200px;
     background-repeat: no-repeat;
@@ -36,12 +36,13 @@ h3, p{
     background-color: #cccccc;
     padding-bottom: 0.5em;
     padding-top: 0.5em;
+    page-break-inside: avoid;
 }
 
 
 #shownames{
     padding-left: 15%;
-    column-count: 2;
+    column-count: 3;
     }
 
 #namesimg{
@@ -53,5 +54,9 @@ h3, p{
     text-align: center;
     margin-bottom: 20px;
     border-radius: 8px;
+    page-break-inside: avoid;
+    overflow: hidden;
 }
+
+
 
