@@ -6,21 +6,21 @@ class People extends React.Component {
     super(props)
     this.state = {
       name: "",
-      img: "",
+      data: [],
     };
   }
 
   async componentDidMount(){
     let name = await Fetch.getName(this.props.link)
-    let img = await Fetch.getImg(name, this.props.films)
-    this.setState({name: name, img: img})
+    let data = await Fetch.getImg(name, this.props.films)
+    this.setState({name: name, data: data})
   }
 
   render() {
       return (
         <div id="namesimg">
-          <img src={this.state.img} width="225"/>
-          <p>{this.state.name}</p>
+          <img src={this.state.data[0]} width="225"/>
+          <a href={this.state.data[1]}>{this.state.name}</a>
         </div>
       );
     }

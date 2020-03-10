@@ -29,9 +29,11 @@ h3{
     text-decoration: underline;
 }
 
-h3, p{
+h3, a{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
+    text-decoration: none;
+    color: black;
 }
 
 #lpers{

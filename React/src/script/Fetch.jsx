@@ -51,21 +51,20 @@ class Fetch  {
   }
 
   static async getImg(name, films){
-    let img
+    let data = []
     if (name == 'Yuki' || name == 'Hii-sama' || name == 'Chu Totoro' || name =='Chibi Totoro'){
-      
       switch(name){
         case 'Yuki':
-          img = yuki
+          data.push(yuki)
           break;
         case 'Hii-sama':
-          img = hii
+          data.push(hii)
           break;
         case 'Chibi Totoro':
-          img = chibitotoro
+          data.push(chibitotoro)
           break;
         case 'Chu Totoro':
-          img = chutotoro
+          data.push(chutotoro)
           break;
         default:
           break
@@ -95,14 +94,15 @@ class Fetch  {
         if (typeof char.anime[0] !== 'undefined'){
           if (films.indexOf(char.anime[0].mal_id)!= -1){
             if (!lock){
-              img = char.image_url
+              data.push(char.image_url)
+              data.push(char.url)
               lock = true
             }
           }
         }
       })
     }
-    return img
+    return data
   }
 
   static async getFilms(){
