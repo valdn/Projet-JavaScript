@@ -34,7 +34,7 @@ class Fetch  {
     return res.name
   }
 
-  static async getImg(name){
+  static async getImg(name, films){
     let img
     if (name == 'Yuki' || name == 'Hii-sama' || name == 'Chu Totoro' || name =='Chibi Totoro'){
       
@@ -74,11 +74,10 @@ class Fetch  {
       }
       let link = "https://api.jikan.moe/v3/search/character?q=" + name
       let res = await this.getData(link)
-      let tab_filmid = await this.getFilms()
       let lock = false
       res.results.forEach(char =>{
         if (typeof char.anime[0] !== 'undefined'){
-          if (tab_filmid.indexOf(char.anime[0].mal_id)!= -1){
+          if (films.indexOf(char.anime[0].mal_id)!= -1){
             if (!lock){
               img = char.image_url
               lock = true

@@ -10,21 +10,23 @@ class Species extends React.Component {
       species: [],
       specie: "",
       options: [],
+      films: [],
     };
   }
 
   async componentDidMount(){
     let species = await Fetch.getSpecies()
+    let films = await Fetch.getFilms()
     this.setState({species: species})
     let options = []
     this.state.species.forEach(element => {
       options.push({ value: element, label: element })
     });
-    this.setState({options: options})
+    this.setState({options: options, films: films})
   }
 
   handleOnChange(specie){
-    this.setState({ specie: specie.value})
+    this.setState({specie: specie.value})
   }
 
   render() {
@@ -35,7 +37,7 @@ class Species extends React.Component {
             <h3>Species List</h3>
             <Select options={this.state.options} onChange={this.handleOnChange.bind(this)}/>
           </div>
-          <ListLink specie={this.state.specie}/>
+          <ListLink specie={this.state.specie} films={this.state.films}/>
         </div>
       );
     }
