@@ -18,13 +18,29 @@ class Fetch  {
 
   static async getLinks(specie){
     let tab_links = []
-    let link = 'https://ghibliapi.herokuapp.com/species?name=' + specie
+    let compt = 0
+    let values = ""
+    
+    specie.forEach(element => {
+      if (compt==0){
+        values += 'name=' + element.value
+      } else {
+        values += '&name=' + element.value
+      }
+    compt++;
+    })
+    let link = 'https://ghibliapi.herokuapp.com/species?' + values 
     let res = await this.getData(link)
     res.forEach(people => {
       people.people.forEach(lk =>{
-        tab_links.push(lk)
+        if (tab_links.indexOf(lk) == -1){
+          tab_links.push(lk)
+        }
+        
       })
     })
+    
+    
     return tab_links
   }
 
