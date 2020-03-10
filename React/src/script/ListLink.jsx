@@ -17,8 +17,8 @@ class ListLink extends React.Component {
         this.setState({names: []})
         let compt = 0
         for (let element of links){
-          await sleep(100)
-          names.push(<td key={compt}><People link={element} films={this.props.films}/></td>)
+          await sleep(50)
+          names.push(<People key={compt} link={element} films={this.props.films}/>)
           compt++
         }
         this.setState({names: names})
