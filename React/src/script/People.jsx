@@ -12,7 +12,7 @@ class People extends React.Component {
 
   async componentDidMount(){
     let name = await Fetch.getName(this.props.link)
-    let img = await Fetch.getImg(name)
+    let img = await Fetch.getImg(name, this.props.films)
     this.setState({name: name, img: img})
   }
 

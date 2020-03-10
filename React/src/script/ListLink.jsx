@@ -17,7 +17,8 @@ class ListLink extends React.Component {
         this.setState({names: []})
         let compt = 0
         for (let element of links){
-          names.push(<People key={'nom' + compt} link={element}/>)
+          await sleep(100)
+          names.push(<td key={compt}><People link={element} films={this.props.films}/></td>)
           compt++
         }
         this.setState({names: names})
@@ -30,12 +31,17 @@ class ListLink extends React.Component {
           {this.state.names.length > 0 && 
           <h3 id="lpers">Names List</h3>
           }
-          <div id="shownames">
+          <div id="shownames">          
             {this.state.names}
           </div>
         </div>
       );
   }
 }
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 export default ListLink
