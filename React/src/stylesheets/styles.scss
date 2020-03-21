@@ -2,13 +2,17 @@ img{
     border-radius: 8px;
 }
 
+#selector {
+    width: 75%;
+}
+
+
 body {
     background-color: #4da6ff;
-    background-image: url("../images/backanim.gif");
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-    
     background-attachment: fixed;
 }
 
