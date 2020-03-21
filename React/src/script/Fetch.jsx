@@ -84,9 +84,6 @@ class Fetch  {
       if (name == 'Granny'){
         name = "Kanta's Grandmother"
       }
-      if (name == 'Niya'){
-        name = 'Prince Lune'
-      }
       let link = "https://api.jikan.moe/v3/search/character?q=" + name
       let res = await this.getData(link)
       let lock = false

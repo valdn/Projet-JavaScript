@@ -1,5 +1,7 @@
 img{
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 10px ridge #000000;
 }
 
 body {
@@ -8,7 +10,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-    
     background-attachment: fixed;
 }
 
@@ -20,7 +21,12 @@ body {
     background-position: 97%;
     padding: 40px;
     padding-top: 10px;
-    border: 5px solid black;
+    border: 15px ridge #000000;
+    border-radius: 4px 0px 0px 0px;
+}
+
+#select {
+    width: 80%;
 }
 
 h3{
@@ -30,14 +36,19 @@ h3{
 }
 
 h3, a{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Papyrus, fantasy;
     font-weight: bold;
-    text-decoration: none;
     color: black;
 }
 
+a{
+    text-decoration: none;
+    font-size: 25px;
+}
+
 #lpers{
-    border: 3px solid black;
+    border: 10px ridge #000000;
+    border-radius: 4px 0px 0px 0px;
     width: 20%;
     text-align: center;
     background-color: #cccccc;
@@ -55,12 +66,13 @@ h3, a{
 #namesimg{
     width: 225px;
     height: 100%;
-    border: 5px solid black;
+    border: 10px ridge black;
+    border-radius: 30px;
     background-color: rgba($color: #b3d9ff, $alpha: 0.7);
     vertical-align: text-bottom;
     text-align: center;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     page-break-inside: avoid;
     overflow: hidden;
 }

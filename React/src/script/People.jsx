@@ -12,6 +12,8 @@ class People extends React.Component {
 
   async componentDidMount(){
     let name = await Fetch.getName(this.props.link)
+    if(name=="Niya")
+      name = "Prince Lune"
     let data = await Fetch.getImg(name, this.props.films)
     this.setState({name: name, data: data})
   }
@@ -20,7 +22,7 @@ class People extends React.Component {
       return (
         <div id="namesimg">
           <img src={this.state.data[0]} width="225"/>
-          <a href={this.state.data[1]}>{this.state.name}</a>
+          <p><a href={this.state.data[1]}>{this.state.name}</a></p>
         </div>
       );
     }
