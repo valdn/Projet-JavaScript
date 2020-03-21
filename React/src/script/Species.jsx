@@ -37,7 +37,7 @@ class Species extends React.Component {
         <div>
           <div id="data">
             <h3>Species List</h3>
-            <div id="select">
+            <div id="selector">
               <Select defaultValue={[]} isMulti options={this.state.options} onChange={this.handleOnChange.bind(this)}/>
             </div>
           </div>
