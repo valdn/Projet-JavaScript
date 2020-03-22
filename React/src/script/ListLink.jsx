@@ -19,7 +19,7 @@ class ListLink extends React.Component {
           this.setState({names: []})
           let compt = 0
           for (let element of links){
-            await sleep(100)
+            await sleep(120)
             names.push(<People key={compt} link={element} films={this.props.films}/>) //On récupère tous les élèments de chaque lien correspondant à un personnage (Lien Image, Lien Personnage, Nom Personnage)
             compt++
           }
