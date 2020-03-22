@@ -3,10 +3,6 @@ API utilisées:
 Ghibli: https://ghibliapi.herokuapp.com/
 Jikan: https://jikan.moe/
 
-<<<<<<< HEAD
-=======
-/*
->>>>>>> parent of b346b8e4... opacite et orthographe
 Modifications:
 
 -Utilisation de React
@@ -17,7 +13,6 @@ Modifications:
 -Utilisation de Fetch
 -Les requêtes sont faites dans une classe (Fetch) en faisant appelle à ses fonctions.
 -Possibilité de cliquer sur le nom du personnage pour aller sur sa page correspondante.
-*/
 
 Nous avons traduit le projet vers React et inclut de la programmation orientée objet.
 Nous avons ajoutés les images en tant que dépendance dans le projet et amélioré l'aspect visuel.
