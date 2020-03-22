@@ -42,7 +42,7 @@ class Fetch  {
     return tab_links
   }
 
-  static async getName(rlink){ //Récupère les noms des des personnages des espèces choisies avec leur lien
+  static async getName(rlink){ //Récupère les noms des personnages des espèces choisies avec leur lien
     let link = rlink
     let res = await this.getData(link)
     return res.name
@@ -100,7 +100,7 @@ class Fetch  {
     return data
   }
 
-  static async getFilms(){ //Récupères les films de Studio Ghibli
+  static async getFilms(){ //Récupère les films de Studio Ghibli
     let link = "https://api.jikan.moe/v3/search/anime?producer=21"
     let res = await this.getData(link)
     let tab_id = []

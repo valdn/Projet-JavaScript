@@ -10,11 +10,11 @@ class People extends React.Component {
     };
   }
 
-  async componentDidMount(){ //Quand le tableau de lien change on effectue des nouvelle requète pour les noms et images des personnages
-    let name = await Fetch.getName(this.props.link) //Fonctions pour récupèrer les noms
+  async componentDidMount(){ //Quand le tableau de lien change on effectue des nouvelles requêtes pour les noms et images des personnages
+    let name = await Fetch.getName(this.props.link) //Fonctions pour récupérer les noms
     if(name=="Niya") //Correction pour l'API
       name = "Prince Lune"
-    let data = await Fetch.getImg(name, this.props.films) //Fonction pour récupèrer l'image et le lien du personnages
+    let data = await Fetch.getImg(name, this.props.films) //Fonction pour récupérer l'image et le lien du personnage
     this.setState({name: name, data: data})
   }
 
