@@ -11,7 +11,7 @@ img{
 
 body {
     background-color: #4da6ff;
-    
+    opacity: 85%;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -21,6 +21,7 @@ body {
 #data{   
     background-image: url("../images/logo.png");
     background-color: #cccccc;
+    opacity: 85%;
     background-size: 200px;
     background-repeat: no-repeat;
     background-position: 97%;
