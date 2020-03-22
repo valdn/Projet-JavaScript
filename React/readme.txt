@@ -1,3 +1,7 @@
+API utilisées:
+Ghibli: https://ghibliapi.herokuapp.com/
+Jikan: https://jikan.moe/
+
 /*
 Modifications:
 
@@ -8,6 +12,7 @@ Modifications:
 -Améliorations visuelles (CSS)
 -Utilisation de Fetch
 -Les requêtes sont faites dans une classe (Fetch) en faisant appelle à ses fonctions.
+-Possibilité de cliquer sur le nom du personnage pour aller sur sa page correspondante.
 */
 
 
@@ -16,3 +21,4 @@ Nous avons ajoutés les images en tant que dépendance dans le projet et amélio
 Il est maintenant possible d'ajouter plusieurs espèces dans le selecteur pour un affichage complet de toutes les espèces selectionnées. (Voir React-Select)
 Nous avons décider d'utiliser Fetch plutôt que XHR car cela était plus facile et propre.
 Nous avons définit une classe (Fetch) permettant de faire toutes les requêtes vers les API à l'intérieur, chaque requête distincte est faite dans sa fonction correspondante. 
+Il est possible, si le personnage existe sur la deuxième API, de cliquer sur le nom du personnage pour accéder à sa page sur le site MyAnimeList que l'API Jikan utilise.

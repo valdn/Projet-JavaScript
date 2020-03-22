@@ -17,7 +17,6 @@ const rand = randomIntFromInterval(1,6);
 
 window.addEventListener('load', event=>{
 
-  console.log(rand);
   var style = document.createElement("style");
   switch (rand) {
     case 1:
@@ -43,10 +42,10 @@ window.addEventListener('load', event=>{
   }
   
 
-  var node = document.createElement("div");
+  var node = document.createElement("div"); //Création du div pour l'affichage de React
   document.body.appendChild(node);
   document.head.appendChild(style);
  
-  ReactDOM.render(<Species/>, node)
+  ReactDOM.render(<Species/>, node) //Affichage de la page
  
 })

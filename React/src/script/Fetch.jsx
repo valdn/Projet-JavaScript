@@ -6,7 +6,7 @@ import chutotoro from '../images/chutotoro.png'
 
 class Fetch  {
 
-  static async getSpecies(){
+  static async getSpecies(){ //Récupère les espèces
     let tab_species = []
     let link = 'https://ghibliapi.herokuapp.com/species'
     let res = await this.getData(link)
@@ -16,7 +16,7 @@ class Fetch  {
     return tab_species
   }
 
-  static async getLinks(specie){
+  static async getLinks(specie){ //Récupère les liens en fonction des espèces choisies
     let tab_links = []
     let compt = 0
     let values = ""
@@ -39,18 +39,16 @@ class Fetch  {
         
       })
     })
-    
-    
     return tab_links
   }
 
-  static async getName(rlink){
+  static async getName(rlink){ //Récupère les noms des des personnages des espèces choisies avec leur lien
     let link = rlink
     let res = await this.getData(link)
     return res.name
   }
 
-  static async getImg(name, films){
+  static async getImg(name, films){ //Récupère les images des personnages et, si il en a un, le lien de redirection vers la page du personnage
     let data = []
     if (name == 'Yuki' || name == 'Hii-sama' || name == 'Chu Totoro' || name =='Chibi Totoro'){
       switch(name){
@@ -102,7 +100,7 @@ class Fetch  {
     return data
   }
 
-  static async getFilms(){
+  static async getFilms(){ //Récupères les films de Studio Ghibli
     let link = "https://api.jikan.moe/v3/search/anime?producer=21"
     let res = await this.getData(link)
     let tab_id = []
@@ -112,7 +110,7 @@ class Fetch  {
     return tab_id
   }
 
-  static async getData(link) {
+  static async getData(link) { //Permet d'effectuer la requète vers les API
     let response = await fetch(link);
     let data = await response.json();
     return data;
