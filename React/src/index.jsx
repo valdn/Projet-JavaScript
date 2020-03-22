@@ -10,15 +10,16 @@ import back6 from "./images/backanim6.gif";
 
 
 
-function randomIntFromInterval(min, max) { // min and max included 
+function randomIntFromInterval(min, max) { // fonction permettant de generer un nombre aléatoire dans un interval donné
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 const rand = randomIntFromInterval(1,6);
 
 window.addEventListener('load', event=>{
 
   var style = document.createElement("style");
-  switch (rand) {
+  switch (rand) { // Application d'un fond animé en fonction du nombre aleatoire généré
     case 1:
       style.innerHTML += 'body {background-image: url("' + back1 + ' ") !important;}';
       break;
