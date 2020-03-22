@@ -21,7 +21,6 @@ body {
 #data{   
     background-image: url("../images/logo.png");
     background-color: #cccccc;
-    opacity: 85%;
     background-size: 200px;
     background-repeat: no-repeat;
     background-position: 97%;
@@ -56,7 +55,6 @@ a{
     border: 10px ridge #000000;
     border-radius: 4px 0px 0px 0px;
     width: 20%;
-    opacity: 85%;
     text-align: center;
     background-color: #cccccc;
     padding-bottom: 0.5em;
@@ -74,7 +72,6 @@ a{
     width: 225px;
     height: 100%;
     border: 10px ridge black;
-    opacity: 85%;
     border-radius: 30px;
     background-color: rgba($color: #b3d9ff, $alpha: 0.7);
     vertical-align: text-bottom;
