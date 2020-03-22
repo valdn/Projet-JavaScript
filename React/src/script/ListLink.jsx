@@ -14,7 +14,7 @@ class ListLink extends React.Component {
   async componentDidUpdate(prevprops){ //On vérifie à chaque update si la valeur de l'espèce a changé
       if (this.props.specie) {
         if (prevprops.specie!==this.props.specie){
-          let links = await Fetch.getLinks(this.props.specie) //On récupère les liens de chaque personnage
+          let links = await Fetch.getLinks(this.props.specie) //On récupère les liens de ch que personnage
           let names = []
           this.setState({names: []})
           let compt = 0
